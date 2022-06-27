@@ -95,7 +95,8 @@ The Bloch Sphere is the real deal.
 When you're working with quantum computers, you're can always rely on the Bloch Sphere to visually represent a qubit's state.
 
 The original circle from the previous steps is represented by the green dashed line.
-The orange axis represents the new imaginary axis that we added to deal with complex numbers in the $\ket{1}$ state's phase.
+The orange axis represents the new imaginary axis that we added to deal with complex numbers in the $\ket{1}$
+state's phase.
 Because we aren't really going to deal with imaginary numbers in this class, **we're going to stick to the dashed-green-line circle during the exercises**, but it's important that you at least see the Bloch Sphere in its entirety because it's pretty much the only fundamental tool we have for visualizing qubit states.
 
 
@@ -130,12 +131,20 @@ Thus, a more clear labelling of the Bloch Sphere (and one of the most common way
 
 When represented in this form, the three axes of the Bloch Sphere are called the **Pauli Axes** because they correspond to some special quantum operations, which I'll describe in the next section on quantum logic gates. 
 
-The axis with $\ket{0}$ and $\ket{1}$ on it is called the **Pauli Z axis**, or just the Z axis for short.
-When we measure a qubit in the computational basis to see if it's in the $\ket{0}$ or the $\ket{1}$ state, this is also called performing a **Z measurement**.
+The axis with $\ket{0}$
+and $\ket{1}$
+on it is called the **Pauli Z axis**, or just the Z axis for short.
+When we measure a qubit in the computational basis to see if it's in the $\ket{0}$ 
+or the $\ket{1}$
+state, this is also called performing a **Z measurement**.
 
-The axis with $\ket{+}$ and $\ket{-}$ is called the **Pauli X axis** (or just the X axis).
+The axis with $\ket{+}$
+and $\ket{-}$
+is called the **Pauli X axis** (or just the X axis).
 
-The axis with $\ket{i+}$ and $\ket{i−}$ is called the **Pauli Y axis** (or just the Y axis).
+The axis with $\ket{i+}$
+and $\ket{i−}$
+is called the **Pauli Y axis** (or just the Y axis).
 
 Another common way to draw the Bloch Sphere is by using these axes labels instead of the intersection points, as demonstrated in this picture (also from Wikipedia):
 
@@ -147,7 +156,9 @@ Another common way to draw the Bloch Sphere is by using these axes labels instea
 ## Representing Qubits on the Bloch Sphere
 
 That last picture has some interesting extra information in it; Besides showing the three axes of the Bloch Sphere, it also shows a qubit $\ket{\psi}$ pointing somewhere in between the three of them.
-It also has the angles $\theta$ and $\phi$ on it, which look like they are tied to $\ket{\psi}$
+It also has the angles $\theta$
+and $\phi$
+on it, which look like they are tied to $\ket{\psi}$
 .
 Let's quickly go over what these angles mean, and how they relate to qubits on the Bloch Sphere.
 
