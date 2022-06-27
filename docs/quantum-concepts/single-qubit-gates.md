@@ -223,7 +223,7 @@ Here's what these qubits look like on the Bloch Sphere:
 
 See what happened here?
 **The X gate mirrors qubits around the X axis of the Bloch Sphere.**
-This is why it's called the X gate.
+This is why it's called the X gate. Note that technically what's happening in the whole Bloch sphere, is that qubits are rotated 180 degrees around the X axis, so it likes like a reflection in our green slice. In general, it turns out that **all unary quantum gates rotate the Bloch sphere by some angle around some axis**! 
 
 This is a good demonstration of why the Bloch Sphere is such a useful visualization tool.
 You can always just "do the math" and calculate the state vector of a qubit based on the matrix of the gate being applied to it, but that doesn't always offer some intuitive sense of what the gate is doing.
