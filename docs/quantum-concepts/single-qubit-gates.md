@@ -60,9 +60,9 @@ In function, they are different from classical logic gates in two main ways:
    When expressed as functions in code, quantum gates don't return anything - they modify their qubit parameters directly.
 2. Quantum logic gates aren't represented by truth tables.
    Instead, they're represented as **matrices**. 
-    1. More specifically, quantum gates are represented as **unitary matrices**. These are square matrices, $A$, such that for all vectors $x$
-       The norm of $Ax$ and $x$ are the same ($||Ax||=||x||$). Since qubits are vectors with complex number entries having norm equal to 1, we can see why we would        care about linear transformation that take in vectors with norm 1 and output vectors with norm 1.
-    1. This also means that quantum gates are, by definition, **reversible** - if you put something in and then you run the inverse of that gate (inverse of the unitary matrix) on the output, you always get the original input back. As it turns out any unitary matrix, $A$, has an inverse and that inverse is the [conjugate transpose](https://en.wikipedia.org/wiki/Conjugate_transpose) of $A$.
+    1. More specifically, quantum gates are represented as **unitary matrices**. These are square matrices, $A$, such that for all vectors, $x$,
+       the norms of $Ax$ and $x$ are the same ($||Ax||=||x||$). Since qubits are vectors with complex number entries having norm equal to 1, we can see why we would        care about linear transformations that take in vectors with norm 1 and output vectors with norm 1.
+    1. This also means that quantum gates are, by definition, **reversible** - if you put something in and then you run the inverse of that gate (inverse of the unitary matrix) on the output, you always get the original input back. Any unitary matrix, $A$, has an inverse and that inverse is the [conjugate transpose](https://en.wikipedia.org/wiki/Conjugate_transpose) of $A$.
     1. For unary gates (ones that only act on one qubit), a logic gate is a **2x2 matrix**.
 3. When a quantum computer applies a logic gate to a qubit, it takes the matrix-vector product of gate's matrix and the qubit's state vector.
    The qubit's resulting state will be the result of that multiplication.
