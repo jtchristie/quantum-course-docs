@@ -8,7 +8,7 @@ Let's generalize this picture to a more accurate drawing of actual qubits, witho
 ![](images/bloch-1.png){: .center loading=lazy }
 
 This graph does a good job of showing the states that a qubit is allowed to be in when we ignore complex numbers.
-However, we also learned from the previous page that global phase doesn't matter; for example, the state $\displaylines{\frac{-1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1}}$ is the same as the state $\frac{1}{2} \ket{0} - \frac{\sqrt{3}}{2} \ket{1}$⟩.
+However, we also learned from the previous page that global phase doesn't matter; for example, the state $\frac{-1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1}$ is the same as the state $\frac{1}{2} \ket{0} - \frac{\sqrt{3}}{2} \ket{1}$⟩.
 We also learned that by convention, the |0⟩  state doesn't have a phase.
 
 Putting those two things together, we can effectively say that the left half of the graph, where $\ket{0}$ is negative, directly maps to the right half of the graph; every point on the left half has a corresponding equal point on the right half.
@@ -148,7 +148,11 @@ In the case of the Bloch Sphere:
 - The angle $\theta$ represents the angle from the positive Z axis (the $\ket{0}$ state) to the positive X axis on the **X-Z plane**.
 - The angle $\phi$ describes the angle from the positive X axis (the $\ket{+}$ state) to the positive Y axis on the **X-Y plane**.
 
-These two angles provide enough information to describe any qubit. The formal equation for using them to declare a qubit's state is this:
+These two angles provide enough information to describe any qubit. The Cartesian coordinates of corresponding point on the Bloch sphere (for these two angles) are:
+
+$$\left( \cos(\phi)\sin(\theta), \sin(\phi)\sin(\theta), \cos(\theta) \right).$$ 
+
+The formal equation for using the angles to declare a qubit's state is this:
 
 $$
 \ket{\psi} = \cos \left(\frac{\theta}{2} \right) \cdot \ket{0} + e^{i \phi} \sin \left(\frac{\theta}{2} \right) \cdot \ket{1}, \qquad 0 \le \theta \le \pi, \qquad 0 \le \phi \lt 2\pi
@@ -162,5 +166,18 @@ $$
 
 Indeed, these are just two equivalent ways of writing qubits.
 You'll see both forms a lot in quantum computing.
+
+## Bloch sphere and Global Phase
+
+We already saw how any point on the Bloch sphere represents a qubit. Let's say that instead you started with a qubit with amplitudes $u,v$ ($\ket{\psi}=u\ket{0}+v\ket{1}$) and wanted to find the corresponding Cartesian coordinates of the point on the Bloch sphere. The $z$ coordinate would be $|u|^2-|v|^2$, while the $x$ and $y$ coordinates would be the real and imaginary parts of $2\overline{u}v$.
+
+Now let's say a global phase, $e^{i\alpha}$, is applied to $\ket{\psi}$ resulting in state
+$$e^{i\alpha}\ket{\psi}=e^{i\alpha}u\ket{0}+e^{i\alpha}v\ket{1}.$$
+The corresponding point on the Bloch sphere would have $z$-coordinate 
+$$|e^{i\alpha}u|^2-|e^{i\alpha}v|^2=|u|^2-|v|^2$$
+and $x$ and $y$ coordinates equal to the real and imaginary parts of 
+$$2\overline{e^{i\alpha}u}e^{i\alpha}v=2e^{-i\alpha}\overline{u}e^{i\alpha}v=2\overline{u}v.$$
+
+Notice that this is the exact same point on the Bloch sphere as the one corresponding to $\ket{\psi}$! In general, two qubits have a global phase difference, if and only if, they are represented by the same point on the Bloch sphere. Recall that unlike relative phase, two qubits with a global phase difference (like $\ket{\psi}$ and $e^{i\alpha}\ket{\psi}$) cannot be experimentally distinguished. Thus, *the Bloch sphere does away with the redundancy of global phase*. In fact the Bloch sphere goes even further: the farther two points are away on Bloch sphere, the easier it is to tell the corresponding qubits apart experimentally. We don't need to know this much for the purposes of the course, but it at least gives us an idea of why we care about pairs of qubits on *opposite sides of the Bloch sphere*, e.g. the pair $\ket{0},\ket{1}$ or the pair $\ket{+},\ket{-}$. 
 
 In the next page, we'll talk about how we can actually compute something with qubits, and how the Bloch Sphere can be used to visualize those computations.
