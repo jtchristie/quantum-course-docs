@@ -111,7 +111,7 @@ Tests that fail will have a red X:
 
 Alternatively, if tests don't appear in the test explorer (which can sometimes happen when directories are moved around and Visual Studio loses track of where tests are), you can directly run tests by right-clicking on the CSharpExercises or QSharpExercises directories inside the **Solution Explorer** and clicking **Run Tests**.
 
-![](images/test-explorer-alternative.png){: .center loading=lazy }
+![](images/test-explorer-alternative.PNG){: .center loading=lazy }
 
 ## Compiling Your Code
 
