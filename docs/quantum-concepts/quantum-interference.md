@@ -242,11 +242,13 @@ Here's the Hadamatrix for two qubits:
 
 You might be able to see a pattern forming - the matrix is basically divided into four quadrants.
 The top-left is just the previous Hadamatrix from one size smaller, the top-right and bottom-left are copies of it, and the bottom-right is the inverted version.
-The result amplitude is just $1 / \sqrt{2^n}$, where $n$ is the number of qubits in the register. There is another way to find out if there will be a $+$ or $-$ in the entry corresponding to row $\ket{x}$
-and column $\ket{y}$. If $x$ is the bit string $x_0x_1\hdots x_n$
-and $y$ is the bit string $y_0y_1\hdots y_n$
+The result amplitude is just $1 / \sqrt{2^n}$
+, where $n$
+is the number of qubits in the register. There is another way to find out if there will be a $+$ or $-$ in the entry corresponding to row $\ket{x}$
+and column $\ket{y}$. If $x$ is the bit string $x_0x_1... x_n$
+and $y$ is the bit string $y_0y_1... y_n$
 then the entry will be $+$
-if $(x_0\cdot y_0)\oplus(x_1\cdot y_1)\oplus\hdots\oplus(x_n\cdot y_n)=0$
+if $(x_0\cdot y_0)\oplus(x_1\cdot y_1)\oplus...\oplus(x_n\cdot y_n)=0$
 and $-$
 if this "bitwise dot product" is 1.
 
