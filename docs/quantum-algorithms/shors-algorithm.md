@@ -710,15 +710,19 @@ $$
 \left( a^{\frac{p}{2}} + 1 \right) \mod b = 0,\qquad \left( a^{\frac{p}{2}} - 1 \right) \mod b = 0
 $$
 
-If either of those expressions is true, then we know that one of them contains both $b_0$ and $b_1$, and this won't work so we have to try something else.
+If either of those expressions is true, then we know that one of them contains both $b_0$ and $b_1$, and this won't work so we have to try something else. Luckily since $p$
+is the period of the function we know that the second modular equation can't be true (otherwise the period of $a$
+mod $b$
+would be a less than $p$
+). Thus it is enough to check that the second equation does not hold.
 
 !!!note
-    From an implementation standpoint, it's usually easier to check if $a^{\frac{p}{2}} \mod b$ is equal to 1 or $b - 1$ - this way we can use classical modular exponentiation, which is very fast.
+    From an implementation standpoint, it's usually easier to check if $a^{\frac{p}{2}} \mod b$ is equal to $b - 1$ - this way we can use classical modular exponentiation, which is very fast.
 
 To summarize, this technique will reveal the factors of $b$ under two conditions:
 
 1. $p$ must be an even number, so $p/2$ is an integer.
-1. $a^{\frac{p}{2}} \mod b$ must not be 1 or $b - 1$.
+1. $a^{\frac{p}{2}} \mod b$ must not be $b - 1$.
 
 Thus, the real task comes down to picking the value of $a$ in the original modular exponentiation function so that both of these conditions are true.
 There is no easy way to determine this ahead of time, so we simply have to plug numbers in randomly and try them until we find one that works.
