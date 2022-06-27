@@ -546,7 +546,7 @@ This tells us that 2 and 3 are both factors of the actual period.
 We can use this information to calculate a *larger* factor by taking the least common multiple of the two factors:
 
 $$
-factor = \lcm(d_{old}, d_{new})= \frac{d_{old} \cdot d_{new}}{\gcd(d_{old}, d_{new})}
+factor = \text{lcm}(d_{old}, d_{new})= \frac{d_{old} \cdot d_{new}}{\gcd(d_{old}, d_{new})}
 $$
 
 where $\gcd$ is the [greatest common divisor](https://en.wikipedia.org/wiki/Greatest_common_divisor) function, which can be efficiently calculated with the [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm).
