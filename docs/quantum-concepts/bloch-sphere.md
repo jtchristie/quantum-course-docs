@@ -148,7 +148,7 @@ In the case of the Bloch Sphere:
 - The angle $\theta$ represents the angle from the positive Z axis (the $\ket{0}$ state) to the positive X axis on the **X-Z plane**.
 - The angle $\phi$ describes the angle from the positive X axis (the $\ket{+}$ state) to the positive Y axis on the **X-Y plane**.
 
-These two angles provide enough information to describe any qubit. The Cartesian coordinates of corresponding point on the Bloch sphere (for these two angles) are:
+These two angles provide enough information to describe any qubit. The Cartesian coordinates of the corresponding point on the Bloch sphere (for these two angles) are:
 
 $$\left( \cos(\phi)\sin(\theta), \sin(\phi)\sin(\theta), \cos(\theta) \right).$$ 
 
