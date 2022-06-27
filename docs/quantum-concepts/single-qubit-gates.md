@@ -356,24 +356,24 @@ That may not seem like it would have the same affect as rotating around the Y ax
 
 ### The S Gate
 
-The **S gate** is the square root of the Z gate.
-Instead of rotating a qubit by 180° around the Z axis, it only rotates qubits by 90° counterclockwise (towards the positive Y axis).
+The **S gate** is a square root of the Z gate; that is, it is a matrix, $S$, such that $S^2=Z$.
+Instead of rotating a qubit by 180° around the Z axis, it only rotates qubits by 90° counterclockwise (towards the positive Y axis). Thus applying the S gate to a qubit twice is the same as applying a single Z gate.
 For example, this will turn the $\ket{+}$ state into the $\ket{i+}$ state.
 The matrix for it is this:
 
 $$
-S = \sqrt{Z} = \begin{bmatrix} \sqrt{1} & \sqrt{0} \\ \sqrt{0} & \sqrt{-1} \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & i \end{bmatrix}
+S = \begin{bmatrix} 1 & 0 \\ 0 & i \end{bmatrix}
 $$
 
 
 ### The T Gate
 
-The **T gate** is the square root of the S gate (so the fourth root of the Z gate).
+The **T gate** is a square root of the S gate (so the fourth root of the Z gate).
 It rotates qubits by 45° around the Z axis.
 It has this matrix:
 
 $$
-T = \sqrt{S} = \begin{bmatrix} \sqrt{1} & \sqrt{0} \\ \sqrt{0} & \sqrt{i} \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & \frac{1+i}{\sqrt{2}} \end{bmatrix}
+T = \begin{bmatrix} 1 & 0 \\ 0 & \frac{1+i}{\sqrt{2}} \end{bmatrix}
 $$
 
 
