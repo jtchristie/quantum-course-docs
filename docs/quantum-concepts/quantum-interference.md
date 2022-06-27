@@ -373,4 +373,3 @@ Quantum interference is extremely important in many quantum algorithms, and is o
 In the next section, we're going to start looking at quantum algorithms that actually compute things faster than classical computers can.
 This is where we start getting into the actual use cases for these algorithms.
 The reason we made the Hadamatrix, and why we found it so useful to understand why those algorithms work, will become apparently very quickly when we walk through them.
-Let's start with the most basic one first: the Deutsch-Jozsa algorithm.
