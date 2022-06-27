@@ -170,6 +170,17 @@ $$
 x = a + bi, \qquad x^* = a - bi
 $$
 
+## Euler's formula
+
+One important formula that comes up in quantum computing is Euler's formula
+$$e^{i\theta}=\cos(\theta)+i\sin(\theta).$$
+
+Any complex number, $z$, with absolute value equal to 1 can be written in this form for some $\theta$
+: $z=e^{i\theta}$
+. These complex numbers lie on the unit circle in the complex plane and one can think of the angle $\theta$
+as the angle the complex number, $e^{i\theta}$
+makes with the $x$-axis.
+
 ## Additional Materials
 
 - [Khan Academy unit on complex numbers](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:complex)
