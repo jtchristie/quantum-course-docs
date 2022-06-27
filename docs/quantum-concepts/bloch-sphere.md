@@ -229,7 +229,7 @@ $$2\overline{e^{i\alpha}u}e^{i\alpha}v=2e^{-i\alpha}\overline{u}e^{i\alpha}v=2\o
 Notice that this is the exact same point on the Bloch sphere as the one corresponding to $\ket{\psi}$
 ! In general, two qubits have a global phase difference, if and only if, they are represented by the same point on the Bloch sphere. Recall that unlike relative phase, two qubits with a global phase difference (like $\ket{\psi}$
 and $e^{i\alpha}\ket{\psi}$
-) cannot be experimentally distinguished. Thus, *the Bloch sphere does away with the redundancy of global phase*. In fact the Bloch sphere goes even further: the farther two points are away on Bloch sphere, the easier it is to tell the corresponding qubits apart experimentally. We don't need to know this much for the purposes of the course, but it at least gives us an idea of why we care about pairs of qubits on *opposite sides of the Bloch sphere*, e.g. the pair $\ket{0},\ket{1}$
+) cannot be experimentally distinguished. Thus, **the Bloch sphere does away with the redundancy of global phase**. In fact the Bloch sphere goes even further: the farther two points are away on the Bloch sphere, the easier it is to tell the corresponding qubits apart experimentally. We don't need to know this much for the purposes of the course, but it at least gives us an idea of why we care about pairs of qubits on *opposite sides of the Bloch sphere*, e.g. the pair $\ket{0},\ket{1}$
 or the pair $\ket{+},\ket{-}$. 
 
 In the next page, we'll talk about how we can actually compute something with qubits, and how the Bloch Sphere can be used to visualize those computations.
