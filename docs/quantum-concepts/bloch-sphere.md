@@ -170,7 +170,8 @@ You'll see both forms a lot in quantum computing.
 ## Bloch sphere and Global Phase
 
 We already saw how any point on the Bloch sphere represents a qubit. Let's say that instead you started with a qubit with amplitudes $u,v$
-($\ket{\psi}=u\ket{0}+v\ket{1}$) and wanted to find the corresponding Cartesian coordinates of the point on the Bloch sphere. The $z$ coordinate would be $|u|^2-|v|^2$, while the $x$ and $y$ coordinates would be the real and imaginary parts of $2\overline{u}v$.
+($\ket{\psi}=u\ket{0}+v\ket{1}$) and wanted to find the corresponding Cartesian coordinates of the point on the Bloch sphere. The $z$
+coordinate would be $|u|^2-|v|^2$, while the $x$ and $y$ coordinates would be the real and imaginary parts of $2\overline{u}v$.
 
 Now let's say a global phase, $e^{i\alpha}$, is applied to $\ket{\psi}$ resulting in state
 $$e^{i\alpha}\ket{\psi}=e^{i\alpha}u\ket{0}+e^{i\alpha}v\ket{1}.$$
