@@ -141,8 +141,9 @@ Zero-controlled and regular-controlled qubits can be mixed, like this:
 This shows a gate where if the first and third qubits are $\ket{0}$, and the second and fourth qubits are $\ket{1}$, then it will flip the fifth qubit.
 In other words, it will only flip the last qubit if the first four qubits are $\ket{0101}$.
 
-The controlled Z gate turns out to be a special controlled gate, since it doesn't matter which qubit is the target and which is the control. This is because the controlled Z gate only applies of a phase of -1, when both bits are in the $\ket{1}$ state. 
+The controlled Z gate turns out to be a special controlled gate, since it doesn't matter which qubit is the target and which is the control. This is because the controlled Z gate only applies of a phase of -1, when both bits are in the $\ket{1}$ state. This is why the gate is sometimes written as a pair of connected filled dots seen below:
 
+![](images/CZ-gate.png){: .center loading=lazy }
 
 ## State Preparation Circuit Examples
 
