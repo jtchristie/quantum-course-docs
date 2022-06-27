@@ -8,7 +8,7 @@ Let's generalize this picture to a more accurate drawing of actual qubits, witho
 ![](images/bloch-1.png){: .center loading=lazy }
 
 This graph does a good job of showing the states that a qubit is allowed to be in when we ignore complex numbers.
-However, we also learned from the previous page that global phase doesn't matter; for example, the state $\frac{-1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1}$ is the same as the state $\frac{1}{2} \ket{0} - \frac{\sqrt{3}}{2} \ket{1}$⟩.
+However, we also learned from the previous page that global phase doesn't matter; for example, the state $\displaylines{\frac{-1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1}}$ is the same as the state $\frac{1}{2} \ket{0} - \frac{\sqrt{3}}{2} \ket{1}$⟩.
 We also learned that by convention, the |0⟩  state doesn't have a phase.
 
 Putting those two things together, we can effectively say that the left half of the graph, where $\ket{0}$ is negative, directly maps to the right half of the graph; every point on the left half has a corresponding equal point on the right half.
@@ -136,7 +136,7 @@ This system is useful when we're talking about shapes like cubes or rectangular 
 
 The second way is with **Spherical Coordinates**, where a point is represented by two angles and a length.
 This system is used when we're talking about shapes like cylinders or spheres that tend to have constant lengths, and are easily described by rotations around an axis.
-It takes the form $(r, \theta, \phi)$ where $r$ is the length of the line stretching from the origin to the point (the radius of the sphere), $\theta$ is an angle of that line from one of the axes, and $\phi$ is an angle from one of the other axes.
+It takes the form $(r, \theta, \phi)$, where $r$ is the length of the line stretching from the origin to the point (the radius of the sphere), $\theta$ is an angle of that line from one of the axes, and $\phi$ is an angle from one of the other axes.
 These three parameters can be used to describe any point in 3D space.
 In the case of a sphere, the radius is always the same, so if you know the radius then you really only need the two angles to define a point.
 
