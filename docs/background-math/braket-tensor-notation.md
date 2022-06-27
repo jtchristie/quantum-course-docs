@@ -109,12 +109,6 @@ A_{10} \cdot B_{10} & A_{10} \cdot B_{11} & A_{11} \cdot B_{10} & A_{11} \cdot B
 }
 $$
 
-Matrix tensors can get very complicated very quickly, so we usually just represent them by combining the names of their components, like we do with vectors:
-
-$$
-A \otimes B \otimes C = ABC
-$$
-
 ## Additional Materials
 
 - [Math is Fun page on Bra-Ket notation](https://www.mathsisfun.com/physics/bra-ket-notation.html)
