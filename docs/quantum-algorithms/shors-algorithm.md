@@ -543,10 +543,10 @@ We could measure any of these using the procedure so far.
 Let's say we run the algorithm once, and calculate a 2 for the period - call this $d_{old}$.
 Then, we run it a second time, and calculate 3 - call this $d_{new}$.
 This tells us that 2 and 3 are both factors of the actual period.
-We can use this information to calculate a *larger* factor with this equation:
+We can use this information to calculate a *larger* factor by taking the least common multiple of the two factors:
 
 $$
-factor = \frac{d_{old} \cdot d_{new}}{\gcd(d_{old}, d_{new})}
+factor = \lcm(d_{old}, d_{new})= \frac{d_{old} \cdot d_{new}}{\gcd(d_{old}, d_{new})}
 $$
 
 where $\gcd$ is the [greatest common divisor](https://en.wikipedia.org/wiki/Greatest_common_divisor) function, which can be efficiently calculated with the [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm).
