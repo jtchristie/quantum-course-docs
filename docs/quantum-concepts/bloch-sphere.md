@@ -8,16 +8,20 @@ Let's generalize this picture to a more accurate drawing of actual qubits, witho
 ![](images/bloch-1.png){: .center loading=lazy }
 
 This graph does a good job of showing the states that a qubit is allowed to be in when we ignore complex numbers.
-However, we also learned from the previous page that global phase doesn't matter; for example, the state $\frac{-1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1}$ is the same as the state $\frac{1}{2} \ket{0} - \frac{\sqrt{3}}{2} \ket{1}$⟩.
+However, we also learned from the previous page that global phase doesn't matter; for example, the state $\frac{-1}{2} \ket{0} + \frac{\sqrt{3}}{2} \ket{1}$
+is the same as the state $\frac{1}{2} \ket{0} - \frac{\sqrt{3}}{2} \ket{1}$⟩.
 We also learned that by convention, the |0⟩  state doesn't have a phase.
 
-Putting those two things together, we can effectively say that the left half of the graph, where $\ket{0}$ is negative, directly maps to the right half of the graph; every point on the left half has a corresponding equal point on the right half.
+Putting those two things together, we can effectively say that the left half of the graph, where $\ket{0}$
+is negative, directly maps to the right half of the graph; every point on the left half has a corresponding equal point on the right half.
 Because of this, we can get rid of the left half entirely:
 
 ![](images/bloch-2.png){: .center loading=lazy }
 
 So far, so good.
-On this graph, there are two "endpoints" of the semicircle: (0, 1) and (0, -1) which correspond to qubit states $0 \ket{0} + 1 \ket{1}$ and $0 \ket{0} - 1 \ket{1}$ respectively.
+On this graph, there are two "endpoints" of the semicircle: (0, 1) and (0, -1) which correspond to qubit states $0 \ket{0} + 1 \ket{1}$
+and $0 \ket{0} - 1 \ket{1}$
+respectively.
 However, notice the following:
 
 $$
@@ -34,7 +38,9 @@ $$
 
 Because -0 = 0, we can say that the latter point has a global phase of -1, which turns it into the first point.
 Both points actually represent the same qubit state.
-In other words, phase doesn't matter for qubits in the $\ket{0}$ or $\ket{1}$ state.
+In other words, phase doesn't matter for qubits in the $\ket{0}$
+or $\ket{1}$
+state.
 
 This next part gets a little bizarre, and we're going to break the conventional rules of Euclidean geometry for a minute.
 We can redraw the graph to merge the two endpoints together, by stretching and wrapping the semicircle to the left.
@@ -49,17 +55,26 @@ This is the graph after the stretch:
 Essentially, every point gets moved to the left along the path of the original circle, except for (1, 0).
 This graph doesn't follow the rules of geometry because the points (1, 0) and (0, 1) are no longer orthogonal - they lie on the same line.
 However, this is actually a much closer representation of how qubits work in real life.
-Notice that the $\ket{0}$ state is always positive (its amplitude never has any phase), but the $\ket{1}$ state's amplitude can go negative in the lower half of the circle.
+Notice that the $\ket{0}$
+state is always positive (its amplitude never has any phase), but the $\ket{1}$
+state's amplitude can go negative in the lower half of the circle.
  
-The conventional way to draw this circle is rotated 90° counterclockwise, so the point corresponding to the $\ket{0}$ state is on top (pointing up), and the point corresponding to the $\ket{1}$ state is on the bottom (pointing down):
+The conventional way to draw this circle is rotated 90° counterclockwise, so the point corresponding to the $\ket{0}$
+state is on top (pointing up), and the point corresponding to the $\ket{1}$
+state is on the bottom (pointing down):
 
 ![](images/bloch-5.png){: .center loading=lazy }
 
 Finally, the last step is to bring complex numbers into the equation.
 Recall that the definition of an amplitude's phase is its sign *and* its imaginary component.
-Also recall that we can only observe the *relative phase difference* between the $\ket{0}$ state and the $\ket{1}$ state.
-By convention, the $\ket{0}$ state doesn't have a phase, but the $\ket{1}$ state can have a phase.
-This means that the $\ket{1}$ state's amplitude is allowed to have an imaginary component.
+Also recall that we can only observe the *relative phase difference* between the $\ket{0}$ 
+state and the $\ket{1}$
+state.
+By convention, the $\ket{0}$
+state doesn't have a phase, but the $\ket{1}$
+state can have a phase.
+This means that the $\ket{1}$
+state's amplitude is allowed to have an imaginary component.
 Since the imaginary component of a complex number is independent from the real component, we have to draw it in a third orthogonal dimension of this graph.
 
 Even when they're complex numbers, the state amplitudes follow the same rules as before:
@@ -89,15 +104,21 @@ Because we aren't really going to deal with imaginary numbers in this class, **w
 The six points corresponding to the axes of the Bloch sphere are very important in quantum computing.
 Writing them out in their explicit form can be tedious, so we have some developed some convenient labels for them.
 
-Note that the point $\left( \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \right)$ corresponds to the state vector $\begin{bmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{bmatrix}$, which can be rewritten using the rules of vector arithmetic to this form:  
+Note that the point $\left( \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \right)$
+corresponds to the state vector $\begin{bmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{bmatrix}$
+, which can be rewritten using the rules of vector arithmetic to this form:  
 
 $$
 \begin{bmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{bmatrix} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}
 $$
 
-This state is usually shortened to the symbol $\ket{}$.
-Similarly, the point $( \frac{1}{\sqrt{2}}, \frac{-1}{\sqrt{2}})$ corresponds to the state $\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}$ which is shortened to the symbol $\ket{-}$.
-The two imaginary axis points are called $\ket{i+}$ and $\ket{i-}$, respectively.
+This state is usually shortened to the symbol $\ket{}$
+.
+Similarly, the point $( \frac{1}{\sqrt{2}}, \frac{-1}{\sqrt{2}})$
+corresponds to the state $\frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}$
+which is shortened to the symbol $\ket{-}$.
+The two imaginary axis points are called $\ket{i+}$
+and $\ket{i-}$, respectively.
 Thus, a more clear labelling of the Bloch Sphere (and one of the most common ways to write it) is shown by the canonical image from Wikipedia below:
 
 ![](images/bloch-7.jpg){: .center loading=lazy }
@@ -126,7 +147,8 @@ Another common way to draw the Bloch Sphere is by using these axes labels instea
 ## Representing Qubits on the Bloch Sphere
 
 That last picture has some interesting extra information in it; Besides showing the three axes of the Bloch Sphere, it also shows a qubit $\ket{\psi}$ pointing somewhere in between the three of them.
-It also has the angles $\theta$ and $\phi$ on it, which look like they are tied to $\ket{\psi}$.
+It also has the angles $\theta$ and $\phi$ on it, which look like they are tied to $\ket{\psi}$
+.
 Let's quickly go over what these angles mean, and how they relate to qubits on the Bloch Sphere.
 
 In order to represent a point in 3D space, we have two options.
@@ -136,7 +158,11 @@ This system is useful when we're talking about shapes like cubes or rectangular 
 
 The second way is with **Spherical Coordinates**, where a point is represented by two angles and a length.
 This system is used when we're talking about shapes like cylinders or spheres that tend to have constant lengths, and are easily described by rotations around an axis.
-It takes the form $(r, \theta, \phi)$, where $r$ is the length of the line stretching from the origin to the point (the radius of the sphere), $\theta$ is an angle of that line from one of the axes, and $\phi$ is an angle from one of the other axes.
+It takes the form $(r, \theta, \phi)$
+, where $r$
+is the length of the line stretching from the origin to the point (the radius of the sphere), $\theta$
+is an angle of that line from one of the axes, and $\phi$
+is an angle from one of the other axes.
 These three parameters can be used to describe any point in 3D space.
 In the case of a sphere, the radius is always the same, so if you know the radius then you really only need the two angles to define a point.
 
@@ -170,16 +196,29 @@ You'll see both forms a lot in quantum computing.
 ## Bloch sphere and Global Phase
 
 We already saw how any point on the Bloch sphere represents a qubit. Let's say that instead you started with a qubit with amplitudes $u,v$
-($\ket{\psi}=u\ket{0}+v\ket{1}$) and wanted to find the corresponding Cartesian coordinates of the point on the Bloch sphere. The $z$
-coordinate would be $|u|^2-|v|^2$, while the $x$ and $y$ coordinates would be the real and imaginary parts of $2\overline{u}v$.
+($\ket{\psi}=u\ket{0}+v\ket{1}$
+) and wanted to find the corresponding Cartesian coordinates of the point on the Bloch sphere. The $z$
+coordinate would be $|u|^2-|v|^2$
+, while the $x$
+and $y$
+coordinates would be the real and imaginary parts of $2\overline{u}v$.
 
-Now let's say a global phase, $e^{i\alpha}$, is applied to $\ket{\psi}$ resulting in state
+Now let's say a global phase, $e^{i\alpha}$
+, is applied to $\ket{\psi}$
+resulting in state
 $$e^{i\alpha}\ket{\psi}=e^{i\alpha}u\ket{0}+e^{i\alpha}v\ket{1}.$$
-The corresponding point on the Bloch sphere would have $z$-coordinate 
+The corresponding point on the Bloch sphere would have $z$
+-coordinate 
 $$|e^{i\alpha}u|^2-|e^{i\alpha}v|^2=|u|^2-|v|^2$$
-and $x$ and $y$ coordinates equal to the real and imaginary parts of 
+and $x$
+and $y$
+coordinates equal to the real and imaginary parts of 
 $$2\overline{e^{i\alpha}u}e^{i\alpha}v=2e^{-i\alpha}\overline{u}e^{i\alpha}v=2\overline{u}v.$$
 
-Notice that this is the exact same point on the Bloch sphere as the one corresponding to $\ket{\psi}$! In general, two qubits have a global phase difference, if and only if, they are represented by the same point on the Bloch sphere. Recall that unlike relative phase, two qubits with a global phase difference (like $\ket{\psi}$ and $e^{i\alpha}\ket{\psi}$) cannot be experimentally distinguished. Thus, *the Bloch sphere does away with the redundancy of global phase*. In fact the Bloch sphere goes even further: the farther two points are away on Bloch sphere, the easier it is to tell the corresponding qubits apart experimentally. We don't need to know this much for the purposes of the course, but it at least gives us an idea of why we care about pairs of qubits on *opposite sides of the Bloch sphere*, e.g. the pair $\ket{0},\ket{1}$ or the pair $\ket{+},\ket{-}$. 
+Notice that this is the exact same point on the Bloch sphere as the one corresponding to $\ket{\psi}$
+! In general, two qubits have a global phase difference, if and only if, they are represented by the same point on the Bloch sphere. Recall that unlike relative phase, two qubits with a global phase difference (like $\ket{\psi}$
+and $e^{i\alpha}\ket{\psi}$
+) cannot be experimentally distinguished. Thus, *the Bloch sphere does away with the redundancy of global phase*. In fact the Bloch sphere goes even further: the farther two points are away on Bloch sphere, the easier it is to tell the corresponding qubits apart experimentally. We don't need to know this much for the purposes of the course, but it at least gives us an idea of why we care about pairs of qubits on *opposite sides of the Bloch sphere*, e.g. the pair $\ket{0},\ket{1}$
+or the pair $\ket{+},\ket{-}$. 
 
 In the next page, we'll talk about how we can actually compute something with qubits, and how the Bloch Sphere can be used to visualize those computations.
