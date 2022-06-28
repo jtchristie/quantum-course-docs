@@ -41,3 +41,6 @@ which will have the $i$
 -th bit as a control and the output bit as a target.
 
 As an example if $s=011$, then an implementation of $f$ would like
+
+![bv-1](images/bv-1.png){: .center loading=lazy}
+
