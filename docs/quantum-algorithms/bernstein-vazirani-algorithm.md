@@ -23,14 +23,14 @@ iterations of the function. We can probe the function by inputing a string with 
 -th bit set to 1 and all other bits set to 0. Then the function will output the value of $s_i$.
 Since we get one bit of information per iteration of the function, we can't figure out $s$
 in less than $n$
-iterations. Using a quantum algorithm, however, we can figure out the $s$ in one iteration!
+iterations. Using a quantum algorithm, however, we can figure out $s$ in one iteration!
 
 ## Implementing the Oracle
 
 If we were told to classically implement such a function, $f$,
 and were given the string $s$,
 how would we do it? To be more specific, we are given an input register consisting of $n$
-bits registered to the values of the bits of an input $x$
+bits initilized to the values of the bits of an input $x$
 and an output register consting of one bit initialized to 0. The goal is for us to set the output bit to the value of $f(x)$. Essentially, this looks like
 
 ![bv-2](images/bv-2.PNG){: .center loading=lazy}
@@ -50,19 +50,18 @@ As an example, if $s=011$, then an implementation of $f$ would like
 
 ![bv-1](images/bv-1.PNG){: .center loading=lazy}
 
-This serves just fine as a quantum operation as well. Note that in the actual problem the oracle's mystery string is unknown. But we can rest assured that it behaves *equivilantely* to a circuit with a bunch of CNOT gates with inputs bits as controls and the output bit as the target. Our goal then is to find out which input bits control a CNOT gate and which ones don't.
+This serves just fine as a quantum operation as well. Note that in the actual problem the oracle's mystery string is unknown. But we can rest assured that it behaves *equivilantely* to a circuit with a bunch of CNOT gates with certain input bits as controls and the output bit as the target. Our goal then is to find out which input bits control a CNOT gate and which ones don't.
 
 ## Phase kickback (again)
 
-The quantum algorithm that solves this problem is pretty similar to the one that solves the Deutsch-Jozsa problem: flip the out bit to the 1 state, apply $H$
-gates to all qubits (this time including the output qubit), apply the oracle, apply the $H$ gates again, and finally measure the qubits. This algorithm helps demonstrate a cool aspect of phase kickback: **phase kickback swaps the control and target of CNOT gates**.
+The quantum algorithm that solves this problem is pretty similar to the one that solves the Deutsch-Jozsa problem: flip the output bit to the 1 state, apply $H$
+gates to all qubits (this time including the output qubit), apply the oracle, apply the $H$ gates again, and finally measure the qubits. This algorithm helps demonstrate an interesting way of interpreting phase kickback: **phase kickback swaps the control and target of CNOT gates**.
 
-Indeed, if we could somehow flip all the CNOT gates in earlier diagram upside down, then an output qubit in the 1 state would set all the CNOT gates off so that an input register initialized to $x=00...0$
+Indeed, if we could somehow flip all the CNOT gates in the earlier diagram upside down, then an output qubit in the 1 state would set all the CNOT gates off so that an input register initialized to $x=00...0$
 would become the mystery string $s$.
-To understand how phase kickback does this we first have to verify the following the following matrices are equal: $HXH$
+To understand how phase kickback does this we first have to verify that the following matrices are equal: $HXH$
 and $Z$.
-
-Of since we can just do the multiplication of the 2-by-2 matrices to see this directly. However, we could also prove that $HXH=Z$
+Of cource, we can just do the multiplication of the 2-by-2 matrices to see this directly. However, we could also prove that $HXH=Z$
 by showing that the two quantum operations have the same effect on basis states $\ket{0}$
 and $\ket{1}$.
 If we first apply an $H$
@@ -121,4 +120,13 @@ which is finally equivilant to
 ![bv-9](images/bv-9.PNG){: .center loading=lazy}
 
 since $HZH=X$
-(prove this for yourself as an exercise) and $H^2=I$.
+(prove this for yourself as an exercise) and $H^2=I$. We summarize the algorithm as follows.
+
+## Implementation
+
+1. Apply X to the output qubit, so it is in the $\ket{1}$ state.
+2. Apply H to all of the qubits (including output).
+3. Run the oracle on the input register and output qubit (the oracle should perform a CNOT on the output).
+4. Apply H to all of the qubits.
+5. Measure all of the input qubits to find $s$.
+
