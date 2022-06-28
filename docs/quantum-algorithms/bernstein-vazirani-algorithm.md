@@ -50,5 +50,5 @@ As an example, if $s=011$, then an implementation of $f$ would like
 
 ![bv-1](images/bv-1.PNG){: .center loading=lazy}
 
-
+This serves just fine as a quantum operation as well. Note that in the actual problem the oracle's mystery string is unknown. But we can rest assured that it behaves *equivilantely* to a circuit with a bunch of CNOT gates with inputs bits as controls and the output bit as the target. Our goal then is to find out which input bits control a CNOT gate and which ones don't.
 
