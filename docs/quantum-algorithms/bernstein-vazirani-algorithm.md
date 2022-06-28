@@ -2,7 +2,7 @@
 
 ## Another toy problem
 
-Much like the Deutsch-Jozsa problem, the Bernstein-Vazirani problem is toy problem where you are given a black box function that you want to learn about with
+Much like the Deutsch-Jozsa problem, the Bernstein-Vazirani problem is a toy problem in which you are given a black box function that you want to learn about with
 as few iterations as possible. Just like before, the black box function takes in $n$
 bits of input and outputs a single bit:
 
@@ -10,7 +10,7 @@ bits of input and outputs a single bit:
 public bool BlackBox(bit[] Input)
 ```
 
-However, in this case instead of having a constant or balance function, we know that the oracle function, $f$,
+However, in this case instead of having a constant or balanced function, we know that the oracle function, $f$,
 performs a bitwise dot product of the input bit string $x=x_0x_1...x_{n-1}$
 with some fixed (albeit unknown) bit string $s=s_0s_1...s_{n-1}$.
 That is
@@ -29,7 +29,7 @@ iterations. Using a quantum algorithm, however, we can figure out the $s$ in one
 
 If we were told to classically implement such a function, $f$,
 and were given the string $s$,
-how would we do it? To be more specific, we are given an input register with consting of $n$
+how would we do it? To be more specific, we are given an input register consisting of $n$
 bits registered to the values of the bits of an input $x$
 and an output register consting of one bit initialized to 0. The goal is for us to set the output bit to the value of $f(x)$. Essentially, this looks like
 
@@ -44,7 +44,7 @@ then toggling $x_i$
 between 0 and 1 flips the value of the resulting $f(x)$.
 We can implement this by adding a CNOT gate for every non-zero bit, $s_i$,
 which will have the $i$
--th bit as a control and the output bit as a target.
+-th bit in the input register as a control and the output bit as a target.
 
 As an example, if $s=011$, then an implementation of $f$ would like
 
