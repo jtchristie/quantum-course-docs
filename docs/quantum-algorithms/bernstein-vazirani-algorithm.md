@@ -88,9 +88,37 @@ Since Hadamard gates where applied to all the input register qubits, they will a
 state. Those qubits corresponding to $s_i=0$
 will remain unaffected (there is no controlled gate connecting them to the output qubit), while the qubits correspodning to $s_i=1$
 will be targeted by an "effective" CZ gate which will make change them to the $\ket{-}$
-state. Finally, another round of Hadamard gates will turn the $\ket{+}$
+state. 
+
+Finally, another round of Hadamard gates will turn the $\ket{+}$
 states in the input register into $\ket{0}$
 and will turn the $\ket{-}$
 states in the input register into $\ket{1}$.
 Thus, at the time of measurement the input register has the value of $s$
 encoded in its qubits and measuring it reveals $s$.
+
+Applying this to our example with $s=011$,
+we are attempting to run the quantum circuit diagram
+
+![bv-5](images/bv-5.PNG){: .center loading=lazy}
+
+which is equivilant to
+
+![bv-6](images/bv-6.PNG){: .center loading=lazy}
+
+since $H^2=I$.
+This is then equivilant to
+
+![bv-7](images/bv-7.PNG){: .center loading=lazy}
+
+since $HXH=Z$.
+Then using the interchangibility of control and target of the $Z$ gate
+
+![bv-8](images/bv-8.PNG){: .center loading=lazy}
+
+which is finally equivilant to
+
+![bv-9](images/bv-9.PNG){: .center loading=lazy}
+
+since $HZH=X$
+(prove this for yourself as an exercise) and $H^2=I$.
