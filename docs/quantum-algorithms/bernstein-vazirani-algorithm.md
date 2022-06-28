@@ -46,7 +46,7 @@ We can implement this by adding a CNOT gate for every non-zero bit, $s_i$,
 which will have the $i$
 -th bit in the input register as a control and the output bit as a target.
 
-As an example, if $s=011$, then an implementation of $f$ would like
+As an example, if $s=011$, then an implementation of $f$ would look like
 
 ![bv-1](images/bv-1.PNG){: .center loading=lazy}
 
@@ -81,6 +81,10 @@ This also shows that a CNOT gate with Hadamard gates around the target has equiv
 is equivilant to
 
 ![bv-4](images/bv-4.PNG){: .center loading=lazy}
+
+This is because if the control bit is 1, then an $HXH=Z$
+gate is applied to the target, while if the control bit is 0, then an $HH=I$
+gate is applied instead.
 
 Recall, from the [controlled gates section](https://stem.mitre.org/quantum/quantum-concepts/multi-qubit-gates.html#controlled-gates-in-general) that the target and control of a CZ gate are interchangeable. Thus, if the output bit is set to 1 before encountering the Hadamard gates of our circuit it will set of the CZ gates. These will act on the input register bits corresponding to non-zero $s_i$.
 Since Hadamard gates where applied to all the input register qubits, they will all be in the $\ket{+}$
