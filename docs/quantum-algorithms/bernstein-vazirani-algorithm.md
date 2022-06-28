@@ -52,3 +52,33 @@ As an example, if $s=011$, then an implementation of $f$ would like
 
 This serves just fine as a quantum operation as well. Note that in the actual problem the oracle's mystery string is unknown. But we can rest assured that it behaves *equivilantely* to a circuit with a bunch of CNOT gates with inputs bits as controls and the output bit as the target. Our goal then is to find out which input bits control a CNOT gate and which ones don't.
 
+## Phase kickback (again)
+
+The quantum algorithm that solves this problem is pretty similar to the one that solves the Deutsch-Jozsa problem: flip the out bit to the 1 state, apply $H$
+gates to all qubits (this time including the output qubit), apply the oracle, apply the $H$ gates again, and finally measure the qubits. This algorithm helps demonstrate a cool aspect of phase kickback: **phase kickback swaps the control and target of CNOT gates**.
+
+Indeed, if we could somehow flip all the CNOT gates in earlier diagram upside down, then an output qubit in the 1 state would set all the CNOT gates off so that an input register initialized to $x=00...0$
+would become the mystery string $s$.
+To understand how phase kickback does this we first have to verify the following the following matrices are equal: $HXH$
+and $Z$.
+
+Of since we can just do the multiplication of the 2-by-2 matrices to see this directly. However, we could also prove that $HXH=Z$
+by showing that the two quantum operations have the same effect on basis states $\ket{0}$
+and $\ket{1}$.
+If we first apply an $H$
+gate to the two states, we get a $\ket{+}$
+and $\ket{-}$
+state. Applying an $X$
+to both states yields $\ket{+}$
+and $-\ket{-}$. 
+Finally, applying another $H$
+yields $\ket{0}$
+and $-\ket{1}$,
+the same effect as just applying the phase gate $Z$.
+This also shows that a CNOT gate with Hadamard gates around the target has equivilant behaviour to a CZ gate:
+
+![bv-3](images/bv-3.PNG){: .center loading=lazy}
+
+is equivilant to
+
+![bv-4](images/bv-4.PNG){: .center loading=lazy}
