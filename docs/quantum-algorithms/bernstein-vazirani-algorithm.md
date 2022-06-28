@@ -82,3 +82,15 @@ This also shows that a CNOT gate with Hadamard gates around the target has equiv
 is equivilant to
 
 ![bv-4](images/bv-4.PNG){: .center loading=lazy}
+
+Recall, from the [controlled gates section](https://stem.mitre.org/quantum/quantum-concepts/multi-qubit-gates.html#controlled-gates-in-general) that the target and control of a CZ gate are interchangeable. Thus, if the output bit is set to 1 before encountering the Hadamard gates of our circuit it will set of the CZ gates. These will act on the input register bits corresponding to non-zero $s_i$.
+Since Hadamard gates where applied to all the input register qubits, they will all be in the $\ket{+}$
+state. Those qubits corresponding to $s_i=0$
+will remain unaffected (there is no controlled gate connecting them to the output qubit), while the qubits correspodning to $s_i=1$
+will be targeted by an "effective" CZ gate which will make change them to the $\ket{-}$
+state. Finally, another round of Hadamard gates will turn the $\ket{+}$
+states in the input register into $\ket{0}$
+and will turn the $\ket{-}$
+states in the input register into $\ket{1}$.
+Thus, at the time of measurement the input register has the value of $s$
+encoded in its qubits and measuring it reveals $s$.
