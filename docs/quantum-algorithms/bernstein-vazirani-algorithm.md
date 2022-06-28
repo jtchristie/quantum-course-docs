@@ -14,7 +14,7 @@ However, in this case instead of having a constant or balanced function, we know
 performs a bitwise dot product of the input bit string $x=x_0x_1...x_{n-1}$
 with some fixed (albeit unknown) bit string $s=s_0s_1...s_{n-1}$.
 That is
-$$f(x)=(s_0x_0)\oplus (s_1x_1)\oplus...(s_{n-1}x_{n-1}).$$
+$$f(x)=(s_0x_0)\oplus (s_1x_1)\oplus...\oplus(s_{n-1}x_{n-1}).$$
 
 The goal here is to find out the value of the mystery string, $s$,
 with as few iterations of the function as possible. Classically, we know that we can figure out $s$
