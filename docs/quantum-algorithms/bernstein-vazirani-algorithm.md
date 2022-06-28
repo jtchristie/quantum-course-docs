@@ -42,5 +42,5 @@ which will have the $i$
 
 As an example if $s=011$, then an implementation of $f$ would like
 
-![](images/bv-1.png){: .center loading=lazy}
+![bv-1](images/bv-1.png){: .center loading=lazy}
 
