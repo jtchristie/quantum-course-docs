@@ -29,7 +29,13 @@ iterations. Using a quantum algorithm, however, we can figure out the $s$ in one
 
 If we were told to classically implement such a function, $f$,
 and were given the string $s$,
-how would we do it? First, we could notice that if an bit of $s$,
+how would we do it? To be more specific, we are given an input register with consting of $n$
+bits registered to the values of the bits of an input $x$
+and an output register consting of one bit initialized to 0. The goal is for us to set the output bit to the value of $f(x)$. Essentially, this looks like
+
+![bv-2](images/bv-2.PNG){: .center loading=lazy}
+
+First, we could notice that if a bit of $s$,
 $s_i$,
 was zero than the value of $x_i$
 has no impact on the output of $f$.
@@ -40,7 +46,9 @@ We can implement this by adding a CNOT gate for every non-zero bit, $s_i$,
 which will have the $i$
 -th bit as a control and the output bit as a target.
 
-As an example if $s=011$, then an implementation of $f$ would like
+As an example, if $s=011$, then an implementation of $f$ would like
 
 ![bv-1](images/bv-1.PNG){: .center loading=lazy}
+
+
 
