@@ -55,7 +55,7 @@ This serves just fine as a quantum operation as well. Note that in the actual pr
 ## Phase kickback (again)
 
 The quantum algorithm that solves this problem is pretty similar to the one that solves the Deutsch-Jozsa problem: flip the output bit to the 1 state, apply $H$
-gates to all qubits (this time including the output qubit), apply the oracle, apply the $H$ gates again, and finally measure the qubits. This algorithm helps demonstrate an interesting way of interpreting phase kickback: **phase kickback swaps the control and target of CNOT gates**.
+gates to all qubits (this time including the output qubit), apply the oracle, apply the $H$ gates again, and finally measure the qubits. This algorithm helps demonstrate an interesting way of interpreting phase kickback: **applying Hadamard gates before and after a CNOT gate swaps the control and target of CNOT gate**.
 
 Indeed, if we could somehow flip all the CNOT gates in the earlier diagram upside down, then an output qubit in the 1 state would set all the CNOT gates off so that an input register initialized to $x=00...0$
 would become the mystery string $s$.
