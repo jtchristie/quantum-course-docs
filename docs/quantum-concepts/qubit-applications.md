@@ -115,7 +115,9 @@ She then alters each qubit with in following way: if $y_i=1$ apply an $H$ gate t
 
 The following table summarizes what the $i$-
 th qubit looks depending on $x_i,y_i$:
-   
+
+![BB84 Table](images/bb84-1.PNG){: .center loading=lazy }
+
 Alice then sends the resulting state to Bob. Bob generates a random $n$-
 bit string $z$
 and modifies the state he recieved as follows: if $z_i=1$, Bob applies an $H$ gate to qubit $i$.
@@ -182,4 +184,4 @@ which can be made arbitrarliy close to 1 as $a$ (and $n$)
 get large. Thus, if the sacrificed bits agree, Alice and Bob can be almost certain that they weren't eavesdropped. If they found out that they were eavesdropped,
 then they can just repeat the BB84 scheme again.
 
- 
+Unlike the Aarronson-Drucker Coin Problem and Elitzur-Vaidman Bomb, the BB84 scheme actually has potential applications as a secure key distribution scheme. Of course, the limiting factor is being able to reliably send a quantum state between two parties without the state decohering.
