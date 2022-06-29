@@ -184,4 +184,17 @@ which can be made arbitrarliy close to 1 as $a$ (and $n$)
 get large. Thus, if the sacrificed bits agree, Alice and Bob can be almost certain that they weren't eavesdropped. If they found out that they were eavesdropped,
 then they can just repeat the BB84 scheme again.
 
+### BB84 Scheme Summary
+
+To summarize the steps of the scheme between sender Alice and reciever Bob:
+
+1. Alice randomly generates two $n$-bit strings, $x$, $y$.
+2. Alice initializes a quantum state to $\ket{x}$
+3. Whenever, $y_i=1$, Alice applies an $H$ gate to qubit $i$
+4. Alice sends the resulting state to Bob
+5. Bob randomly generates an $n$-bit string $z$, and whenever $z_i=1$, Bob applies an $H$ gate to qubit $i$. Bob then measures the state and stores the value as $t$
+6. Alice and Bob share strings $y,z$ and whenever $y_i\neq z_i$, Alice and Bob throw away bits $x_i,t_i$. The remaining strings are $x',t'$
+7. Alice and Bob share some of the bits of $x',t'$. If they these bits agree, then the unshared bits of $x',t'$ are probably equal/not eavesdropped and can serve as the shared private key.
+8. If the shared bits disagree somewhere, then Alice and Bob were eavesdropped
+
 Unlike the Aarronson-Drucker Coin Problem and Elitzur-Vaidman Bomb, the BB84 scheme actually has potential applications as a secure key distribution scheme. Of course, the limiting factor is being able to reliably send a quantum state between two parties without the state decohering.
