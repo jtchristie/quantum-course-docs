@@ -124,7 +124,7 @@ which is finally equivilant to
 ![bv-9](images/bv-9.PNG){: .center loading=lazy}
 
 since $HZH=X$
-(prove this for yourself as an exercise) and $H^2=I$. Understanding why the above algorithm works uses something called a **quantum circuit diagram equivilance argument**. This sometimes a great tool to get around having to keep track of states in a complicated superposition with many amplitudes. We summarize the algorithm as follows.
+(prove this for yourself as an exercise) and $H^2=I$. Understanding why the above algorithm works uses something called a **quantum circuit diagram equivilance argument**. This is sometimes a great tool to get around having to keep track of states in a complicated superposition with many amplitudes. We summarize the algorithm as follows.
 
 ## Implementation
 
