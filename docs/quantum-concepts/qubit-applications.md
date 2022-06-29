@@ -148,7 +148,38 @@ and since $H^2=I$,
 the net result is that the qubit stays in the state $\ket{x_i}$.
 Bob then measures and keeps this bit as a member of the shared secret key.
 
-Now, we have to get to the important part: what happens if Eve intercepts either the quantum state or the classically communicated strings $z$, $y$.
 
+### Eve attacks
+Now, we have to get to the important part: what happens if Eve intercepts either the quantum state or the classically communicated strings $z$, $y$.
+If Eve doesn't intercept the quantum state but intercepts the strings $z$, $y$,
+she'll know which bits of the $x$ and $t$
+are kept for the shared secret key, but she won't know what the values of those bits are. Thus, if she plans to decypher the secret key, she will need to intercept
+the quantum state. 
+
+But when the quantum state is sent, only Alice knows which bits are in $\ket{0},\ket{1}$
+states and which bits are in the $\ket{+},\ket{-}$
+states (since this is determined by $y$).
+If Eve just naively measure the qubits of the state, all the qubits in the $\ket{+},\ket{-}$
+states would collapse to $\ket{0}$
+or $\ket{1}$,
+changing the quantum state.
+If Eve somehow knew the entries of $y$,
+she could be slick and preserve the delicate states, $\ket{+},\ket{-}$.
+Eve could apply an $H$
+gate to remove the superpostion, measure the qubit (which will remain unaltered since it is now either $\ket{0}$
+or \ket{1}$),
+and reapply the $H$ gate to restore the original state. This would allow her to uncover $x$ and thus the secret key lying in the subset of its bits.
+However, she doesn't know $y$ and so we expect her to alter roughly half the qubits of the state, no matter what she tries.
+
+Upon comparing $y$ and $z$,
+Alice and Bob decide to check if they were eavesdropped by sacrificing a bit of their shared key $s$.
+Indeed, if noone intervened, the shared keys would be identical and so comparing some of the bits of the keys would yield the same values
+(even though classically shared values cant be used later on). Eavesdropping alters half the qubits of the transmitted state and there is still a $0.5$ 
+chance that the value Bob measures for the comporised qubit just so happens to agree with Alices choice of $x_i$.
+Thus, if $a$ bits of Alice and Bob's secret keys are sacraficed, then the chance of finding an eavesdropper-induced discrepancy is
+$$1-(1-0.5^2)^a=1-\left(\frac{3}{4}\right)^a,$$
+which can be made arbitrarliy close to 1 as $a$ (and $n$)
+get large. Thus, if the sacrificed bits agree, Alice and Bob can be almost certain that they weren't eavesdropped. If they found out that they were eavesdropped,
+then they can just repeat the BB84 scheme again.
 
  
