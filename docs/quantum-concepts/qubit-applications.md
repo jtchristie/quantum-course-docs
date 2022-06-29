@@ -167,7 +167,7 @@ If Eve somehow knew the entries of $y$,
 she could be slick and preserve the delicate states, $\ket{+},\ket{-}$.
 Eve could apply an $H$
 gate to remove the superpostion, measure the qubit (which will remain unaltered since it is now either $\ket{0}$
-or \ket{1}$),
+or $\ket{1}$),
 and reapply the $H$ gate to restore the original state. This would allow her to uncover $x$ and thus the secret key lying in the subset of its bits.
 However, she doesn't know $y$ and so we expect her to alter roughly half the qubits of the state, no matter what she tries.
 
