@@ -80,7 +80,75 @@ state. To summarize the procedure:
 The process that occured is related to something called the **Quantum Zeno** or **Watched Pot Effect**. Essentially, when there is no person or device to measure a qubit it can slowly drift to change its state to something new. On the other hand, if something is constantly measuring the qubit, it has a smaller probability
 of changing state from the one it was initialized to.
 
-## Quantum Key Distribution (the BB84 scheme)
+## BB84 Scheme
 
+### One-time pad encryption
 In addition to [superdense coding](https://stem.mitre.org/quantum/quantum-algorithms/superdense-coding.html), there is another quantum methadology for secure
-communication between two parties, Alice and Bob, that avoids nasty eavesdropper Eve.
+communication between two parties, Alice and Bob, that avoids nasty eavesdropper Eve. First, we introduce the idea of **one-time pad encryption**. Suppose Alice wants to send bomb a secrete message which she stored in the binary bit string $m=m_0m_1...m_{n-1}$.
+She is afraid that Eve might eavesdrop on this message and so she wants to encrypt it. Luckily, Alice and Bob share a secret key, a bit string $s=s_0s_1...s_{n-1}$.
+Alice encrypts her message by taking the bitwise XOR of the two strings to create a string $e$ with entries
+$$e_i=m_i\oplus s_i.$$
+So for example, if $m=011$ 
+and $s=101$,
+then the encrypted string is $e=110$.
+
+Alice sends $e$ to Bob and he decrpyts it by taking the bitwise XOR of $e$
+and $s$
+, so that the $i$-
+th entry is
+$$e_i\oplus s_i=(m_i\oplus s_i)\oplus s_i=m_i,$$
+since $s_i\oplus s_i=0$.
+Thus, even if Eve intercepts the string, $e$,
+she can't decypher what it means without knowledge of $s$.
+The reason it is called one-time pad encrytion is because the secrete key, $s$
+should really be only used once, since otherwise Even can use cryptographic techniques
+on the many encrypted messages she intercepts to begin and decypher the values of $s$.
+
+### Quantum Key Distribution
+
+The only problem now is to figure out a way to distribute the secret key to Alice and Bob, while being sure that Eve doesn't also find the key. Alice proposes the
+following solution. She generates two random $n$-
+bit strings, $x$ and $y$.
+She creates an $n$-
+qubit state initilized to state $\ket{x}$.
+She then alters each qubit with in following way: if $y_i=1$ apply an $H$ gate to qubit $i$.
+
+The following table summarizes what the $i$-
+th qubit looks depending on $x_i,y_i$:
+   
+Alice then sends the resulting state to Bob. Bob generates a random $n$-
+bit string $z$
+and modifies the state he recieved as follows: if $z_i=1$, Bob applies an $H$ gate to qubit $i$.
+Bob then measures the state to get a string of bits, $t$.
+   
+Now that the key has been sent, Alice and Bob share (through a classical communication channel) the strings $y$ and $z$,
+which should agree in roughly $n/2$
+places. Alice discards the bits of her string, $x$, corresponding to the entries where $y$ and $z$ disagree.
+Bob does the same with his string, $t$. What remains is there shared private key.
+   
+As an example let $x=0101$,
+$y=1100$,
+and
+$z=0101$.
+Then Alice aplies Hadamard gates to the first two qubits of $\ket{1101}$
+resulting in the state 
+$$\ket{+}\otimes\ket{-}\otimes\ket{00}=\ket{+-01}.$$
+This state is sent to Bob, who uses $z$
+to determine that a Hadamard gate will be applied to qubits 1 and 3, resulting in state $\ket{+10-}$.
+Measuring the state might yield different results for $t$ but it will always have the middle two qubits measuring to $\ket{10}$.
+Since $y$ and $z$
+agree in the middle two bits, Alice and Bob end up keeping the middle parts of $x$ and $t$:
+10 
+
+This is the secret key that they now both possess. To see why this works more precisely, if $y_i=z_i$
+then either two (if $y_i=z_i=1$)
+or zero (if $y_i=z_i=0$) 
+Hadamard gates are applied to qubit $\ket{x_i}$
+and since $H^2=I$, 
+the net result is that the qubit stays in the state $\ket{x_i}$.
+Bob then measures and keeps this bit as a member of the shared secret key.
+
+Now, we have to get to the important part: what happens if Eve intercepts either the quantum state or the classically communicated strings $z$, $y$.
+
+
+ 
