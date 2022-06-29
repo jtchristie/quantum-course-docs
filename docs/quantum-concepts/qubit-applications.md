@@ -126,7 +126,7 @@ Bob then measures the state to get a string of bits, $t$.
 Now that the key has been sent, Alice and Bob share (through a classical communication channel) the strings $y$ and $z$,
 which should agree in roughly $n/2$
 places. Alice discards the bits of her string, $x$, corresponding to the entries where $y$ and $z$ disagree.
-Bob does the same with his string, $t$. What remains is there shared private key.
+Bob does the same with his string, $t$. What remains is their shared private key.
    
 As an example let $x=0101$,
 $y=1100$,
@@ -171,7 +171,10 @@ Eve could apply an $H$
 gate to remove the superpostion, measure the qubit (which will remain unaltered since it is now either $\ket{0}$
 or $\ket{1}$),
 and reapply the $H$ gate to restore the original state. This would allow her to uncover $x$ and thus the secret key lying in the subset of its bits.
-However, she doesn't know $y$ and so we expect her to alter roughly half the qubits of the state, no matter what she tries.
+However, she doesn't know $y$ and so we expect her to alter roughly half the qubits of the state, no matter what she tries. The following diagram shows an example
+of how Eve compromises the transmitted state by measuring it:
+
+![BB84 Eve attacks](images/bb84-2.PNG){: .center loading=lazy }
 
 Upon comparing $y$ and $z$,
 Alice and Bob decide to check if they were eavesdropped by sacrificing a bit of their shared key $s$.
