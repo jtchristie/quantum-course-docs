@@ -22,15 +22,66 @@ Use the table below to find a course module. If you are not sure whether you hav
 
 [Download :material-download:](./exercises.zip){: .md-button .md-button--primary }
 
+Click the button above to download the lab exercises and extract the contents of the .zip file
+
 ## Installation
+
+### Visual Studio
 
 - Install [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/) with the .NET Core cross-platform development workload enabled
 
 - Install the [Microsoft Quantum Development Kit extension](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit) for Visual Studio
 
-- Click the button above to download the lab exercises and extract the contents of the .zip file
-
 - Open `Intro to Quantum Software Development.sln` in Visual Studio
+
+### Visual Studio Code
+
+- Using Windows 10 or 11: 
+  - Download .NET 6.0 SDK for Windows (x64). Please use the following link to download the best version: 
+    - https://wingetgui.com/apps?id=Microsoft.DotNet.SDK.6&v=6.0.300
+  - Download VS Code for Windows: https://code.visualstudio.com/download
+  - Use the extension browser in VS Code on the left
+    - Install the Quantum Development Kit extension for VS Code
+    - Install the C# extension
+    - Install the .NET Core Test Explorer extension
+  - To create and run a new Q# project in VS Code, follow the steps here:
+    - https://docs.microsoft.com/en-us/azure/quantum/how-to-command-line-local?tabs=tabid-vscode
+- Using Windows 10 or 11 + Windows Subsystem for Linux (advanced):
+  - Install Linux on windows with WSL:
+    - https://docs.microsoft.com/en-us/windows/wsl/install
+  - Download Ubuntu for Windows (20.04 LTS should work best) from the Microsoft Store
+  -  Open Ubuntu, create profile, and paste the following into the terminal: 
+    ```
+    sudo apt-get update; \
+    sudo apt-get install -y apt-transport-https && \
+    sudo apt-get update && \
+    sudo apt-get install -y dotnet-sdk-6.0=6.0.300-1
+    ```
+  - Download VS Code for Windows (NOT Linux!!):
+    - https://code.visualstudio.com/download
+  - Install the Remote Development Kit for VS Code
+    - Use the extension browser in VS Code on the left. 
+  - On the bottom left, a new green icon should be visible. Click this, then select Remote-WSL: New Window to open your Linux terminal in VS Code.
+  - Now that VS Code is using your Ubuntu terminal, install all other extensions on the 'WSL' version of your VS Code.
+    - Install the Quantum Development Kit extension
+    - Install the C# extension
+    - Install the .NET Core Test Explorer extension
+  - To create and run a new Q# project in VS Code, follow the steps here:
+    - https://docs.microsoft.com/en-us/azure/quantum/how-to-command-line-local?tabs=tabid-vscode
+- Using MacOS with x64 chip:
+  - Make sure the relevant terminal packages are updated with the following commands:
+    - `sudo softwareupdate -i -a`
+    - `xcode-select --install`
+  - Download .NET 6.0 SDK for macOS (x64):
+    - https://dotnet.microsoft.com/en-us/download
+  - Download VS Code for macOS:
+    - https://code.visualstudio.com/download
+  - Use the extension browser in VS Code on the left:
+    - Install the Quantum Development Kit extension
+    - Install the C# extension
+    - Install the .NET Core Test Explorer extension
+  - To create and run a new Q# project in VS Code, follow the steps here:
+    - https://docs.microsoft.com/en-us/azure/quantum/how-to-command-line-local?tabs=tabid-vscode
 
 ## Use
 
