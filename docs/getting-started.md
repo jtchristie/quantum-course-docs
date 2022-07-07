@@ -37,63 +37,54 @@ Click the button above to download the lab exercises and extract the contents of
 
 ### Visual Studio Code
 
-- Using Windows 10 or 11: 
-  - Download .NET 6.0 SDK for Windows (x64). Please use the following link to download the best version: 
-    - https://wingetgui.com/apps?id=Microsoft.DotNet.SDK.6&v=6.0.300
-  - Download VS Code for Windows: https://code.visualstudio.com/download
-  - Use the extension browser in VS Code on the left
-    - Install the Quantum Development Kit extension for VS Code
-    - Install the C# extension
-    - Install the .NET Core Test Explorer extension
+- Using Windows 10 or 11:
+    - Download [.NET 6.0 SDK for Windows (x64)](https://wingetgui.com/apps?id=Microsoft.DotNet.SDK.6&v=6.0.300).
+    - Download [VS Code](https://code.visualstudio.com/download) for Windows
+    - Use the extension browser in VS Code on the left
+        - Install the Quantum Development Kit extension for VS Code
+        - Install the C# extension
+        - Install the .NET Core Test Explorer extension
 
 - Using Windows 10 or 11 + Windows Subsystem for Linux (advanced):
-  - Install Linux on windows with WSL:
-    - https://docs.microsoft.com/en-us/windows/wsl/install
-  - Download Ubuntu for Windows (20.04 LTS should work best) from the Microsoft Store
-  -  Open Ubuntu, create profile, and paste the following into the terminal: 
+    - Install Linux on windows with [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) 
+    - Download Ubuntu for Windows (20.04 LTS should work best) from the Microsoft Store
+    -  Open Ubuntu, create profile, and paste the following into the terminal: 
     ```
     sudo apt-get update; \
     sudo apt-get install -y apt-transport-https && \
     sudo apt-get update && \
     sudo apt-get install -y dotnet-sdk-6.0=6.0.300-1
     ```
-  - Download VS Code for Windows (NOT Linux!!):
-    - https://code.visualstudio.com/download
-  - Install the Remote Development Kit for VS Code
-    - Use the extension browser in VS Code on the left. 
-  - On the bottom left, a new green icon should be visible. Click this, then select Remote-WSL: New Window to open your Linux terminal in VS Code.
-  - Now that VS Code is using your Ubuntu terminal, install all other extensions on the 'WSL' version of your VS Code.
-    - Install the Quantum Development Kit extension
-    - Install the C# extension
-    - Install the .NET Core Test Explorer extension
+    - Download [VS Code](https://code.visualstudio.com/download) for Windows (NOT Linux!!):
+    - Install the Remote Development Kit extension for VS Code from the extension browser on the left
+    - On the bottom left, a new green icon should be visible. Click this, then select Remote-WSL: New Window to open your Linux terminal in VS Code.
+    - Now that VS Code is using your Ubuntu terminal, install all other extensions on the 'WSL' version of your VS Code.
+        - Install the Quantum Development Kit extension
+        - Install the C# extension
+        - Install the .NET Core Test Explorer extension
 
 - Using MacOS with x64 chip:
-  - Make sure the relevant terminal packages are updated with the following commands:
-    - `sudo softwareupdate -i -a`
-    - `xcode-select --install`
-  - Download .NET 6.0 SDK for macOS (x64):
-    - https://dotnet.microsoft.com/en-us/download
-  - Download VS Code for macOS:
-    - https://code.visualstudio.com/download
-  - Use the extension browser in VS Code on the left:
-    - Install the Quantum Development Kit extension
-    - Install the C# extension
-    - Install the .NET Core Test Explorer extension
+    - Make sure the relevant terminal packages are updated with the following commands:
+        - `sudo softwareupdate -i -a`
+        - `xcode-select --install`
+    - Download [].NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download) for macOS (x64)
+    - Download [VS Code](https://code.visualstudio.com/download) for macOS
+    - Use the extension browser in VS Code on the left:
+        - Install the Quantum Development Kit extension
+        - Install the C# extension
+        - Install the .NET Core Test Explorer extension
 
 - Using any OS with a Docker container:
-  - Install Docker Desktop for Windows/Mac
-    - https://www.docker.com/products/docker-desktop/
-  - If you are using WSL 2 on Windows, to ensure the WSL 2 back-end is enabled: Right-click on the Docker taskbar item and select Settings. Check Use the WSL 2 based engine and verify your distribution is enabled under Resources > WSL Integration.
-  - When not using the WSL 2 back-end, right-click on the Docker task bar item, select Settings and update Resources > File Sharing with any locations your source code is kept. See tips and tricks for troubleshooting.
-  - Download VS Code for your OS:
-    - https://code.visualstudio.com/download
-  - Install the Remote Development Kit for VS Code
-    - Use the extension browser in VS Code on the left. 
-  - On the bottom left, a new green icon should be visible. Click this, then select 'Open Folder in Container' to open VS Code in a development container that will use Ubuntu and has dotnet already installed.
-  - Now that VS Code is using your container, install all other extensions on the container version of VS Code, unless recommended otherwise.
-    - Install the Quantum Development Kit extension
-    - Install the C# extension
-    - Install the .NET Core Test Explorer extension
+    - Install [Docker Desktop](https://www.docker.com/products/docker-desktop/) for Windows/Mac
+    - If you are using WSL 2 on Windows, to ensure the WSL 2 back-end is enabled: Right-click on the Docker taskbar item and select Settings. Check Use the WSL 2 based engine and verify your distribution is enabled under Resources > WSL Integration.
+    - When not using the WSL 2 back-end, right-click on the Docker task bar item, select Settings and update Resources > File Sharing with any locations your source code is kept. See tips and tricks for troubleshooting.
+    - Download [VS Code](https://code.visualstudio.com/download) for your OS:
+    - Install the Remote Development Kit extension for VS Code from the extension browser on the left
+    - On the bottom left, a new green icon should be visible. Click this, then select 'Open Folder in Container' to open VS Code in a development container that will use Ubuntu and has dotnet already installed.
+    - Now that VS Code is using your container, install all other extensions on the container version of VS Code, unless recommended otherwise.
+        - Install the Quantum Development Kit extension
+        - Install the C# extension
+        - Install the .NET Core Test Explorer extension
 
 To create and run a new Q# project in VS Code, follow the steps [here](https://docs.microsoft.com/en-us/azure/quantum/how-to-command-line-local?tabs=tabid-vscode). Linked here are more detailed use instructions for [Visual Studio](software-development/visual-studio.md) and [Visual Studio Code](software-development/visual-studio-code.md).
 
