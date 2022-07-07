@@ -17,6 +17,7 @@ Use the table below to find a course module. If you are not sure whether you hav
 | [Bra-ket and Tensor Notation](./background-math/braket-tensor-notation.md) | [Low-level Programming](./software-development/low-level-programming.md) | [Intro to Q#](./software-tools/intro-qsharp.md) |  | |  | [Quantum Fourier Transform](./quantum-algorithms/qft.md) |  | [Closing Thoughts and Next Steps](./real-execution/whats-next.md) |
 | | [High-level Programming](./software-development/high-level-programming.md) | [Lab Tutorial: Single-Qubit Gates](./labs/lab1.md) |  | |  | [Shor's Algorithm](./quantum-algorithms/shors-algorithm.md) |  |
 | | [Visual Studio](./software-development/visual-studio.md) | | | | |  |
+| | [Visual Studio Code](./software-development/visual-studio-code.md) | | | | |  |
 
 ## Lab Exercises
 

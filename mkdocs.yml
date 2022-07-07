@@ -103,6 +103,7 @@ nav:
       - 'software-development/low-level-programming.md'
       - 'software-development/high-level-programming.md'
       - 'software-development/visual-studio.md'
+      - 'software-development/visual-studio-code.md'
   - Fundamentals:
     - Qubits and Quantum Gates:
       - 'quantum-concepts/qubits.md'
