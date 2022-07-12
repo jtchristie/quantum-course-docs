@@ -13,7 +13,7 @@ Use the table below to find a course module. If you are not sure whether you hav
 | - | - | - | - | - | - | - | - | - |
 | [Complex Numbers](./background-math/complex-numbers.md) | [Digital Information](./classical-computing/digital-information.md) | [Qubits](./quantum-concepts/qubits.md) | [Qubit Registers](./quantum-concepts/qubit-registers.md) | [Complex Superpositions](./quantum-concepts/complex-superpositions.md) | [Quantum Interference](./quantum-concepts/quantum-interference.md) | [Deutsch-Jozsa Algorithm](./quantum-algorithms/deutsch-jozsa-algorithm.md) | [Bit-Flip Error Correction](./error-correction-codes/bit-flip-error-correction.md) | [Intro to Qiskit](./software-tools/intro-qiskit.md) |
 | [Vectors](./background-math/vectors.md) | [Endianness](./classical-computing/endianness.md) | [The Bloch Sphere](./quantum-concepts/bloch-sphere.md) | [Multi-Qubit Gates](./quantum-concepts/multi-qubit-gates.md) | [Quantum Circuit Diagrams](./quantum-concepts/quantum-circuit-diagrams.md) | [Superdense Coding](./quantum-algorithms/superdense-coding.md) | [Grover's Algorithm](./quantum-algorithms/grovers-algorithm.md) | [Steane ECC](./error-correction-codes/steane-ecc.md) | [Cloud-Based Machines](./real-execution/cloud-based-machines.md) |
-| [Matrices](./background-math/matrices.md) | [Digital Logic](./classical-computing/digital-logic.md) | [Single-Qubit Gates](./quantum-concepts/single-qubit-gates.md) | | [The Quirk Tool](./software-tools/quirk-tool.md) |  | [Simon's Algorithm](./quantum-algorithms/simons-algorithm.md) | | [Resource Estimation and Practicality Assessment](./real-execution/resource-estimation.md) | 
+| [Matrices](./background-math/matrices.md) | [Digital Logic](./classical-computing/digital-logic.md) | [Single-Qubit Gates](./quantum-concepts/single-qubit-gates.md) | [Nonlocal Games](./quantum-concepts/nonlocal-games.md)| [The Quirk Tool](./software-tools/quirk-tool.md) |  | [Simon's Algorithm](./quantum-algorithms/simons-algorithm.md) | | [Resource Estimation and Practicality Assessment](./real-execution/resource-estimation.md) | 
 | [Bra-ket and Tensor Notation](./background-math/braket-tensor-notation.md) | [Low-level Programming](./software-development/low-level-programming.md) | [Intro to Q#](./software-tools/intro-qsharp.md) |  | |  | [Quantum Fourier Transform](./quantum-algorithms/qft.md) |  | [Closing Thoughts and Next Steps](./real-execution/whats-next.md) |
 | | [High-level Programming](./software-development/high-level-programming.md) | [Lab Tutorial: Single-Qubit Gates](./labs/lab1.md) |  | |  | [Shor's Algorithm](./quantum-algorithms/shors-algorithm.md) |  |
 | | [Visual Studio](./software-development/visual-studio.md) | | | | |  |
@@ -49,6 +49,13 @@ Click the button above to download the lab exercises and extract the contents of
     - Install Linux on windows with [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) 
     - Download Ubuntu for Windows (20.04 LTS should work best) from the Microsoft Store
     -  Open Ubuntu, create profile, and paste the following into the terminal: 
+    ```wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+    sudo dpkg -i packages-microsoft-prod.deb
+    rm packages-microsoft-prod.deb
+    ```
+
+    and then this:
+    
     ```
     sudo apt-get update; \
     sudo apt-get install -y apt-transport-https && \
