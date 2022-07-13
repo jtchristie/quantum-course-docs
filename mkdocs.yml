@@ -114,6 +114,7 @@ nav:
     - Multi-Qubit Systems:
       - 'quantum-concepts/qubit-registers.md'
       - 'quantum-concepts/multi-qubit-gates.md'
+      - 'quantum-concepts/nonlocal-games.md'
     - Quantum Circuits:
       - 'quantum-concepts/complex-superpositions.md'
       - 'quantum-concepts/quantum-circuit-diagrams.md'
